@@ -3,10 +3,15 @@
 
 #include <QObject>
 
-class Player
+class Player : public QObject
 {
+    Q_OBJECT
 public:
-    Player();
+    explicit Player(QObject *parent = nullptr);
+
+signals:
+
+public slots:
 };
 
 #endif // PLAYER_H

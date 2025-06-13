@@ -6,12 +6,12 @@ Cards::Cards()
 
 }
 
-void Cards::add(Card &card)
+void Cards::add(const Card &card)
 {
     m_cards.insert(card);
 }
 
-void Cards::add(Cards &cards)
+void Cards::add(const Cards &cards)
 {
     m_cards.unite(cards.m_cards);
 }
@@ -55,7 +55,7 @@ void Cards::clear()
 
 Card::CardPoint Cards::maxPoint()
 {
-    int max = Card::CardPoint::CardPoint_begin;
+    Card::CardPoint max = Card::CardPoint::CardPoint_begin;
     if(!m_cards.isEmpty())
     {
         for(auto it = m_cards.begin();it!=m_cards.end();++it)
@@ -71,7 +71,7 @@ Card::CardPoint Cards::maxPoint()
 
 Card::CardPoint Cards::minPoint()
 {
-    int min = Card::CardPoint::CardPoint_end;
+    Card::CardPoint min = Card::CardPoint::CardPoint_end;
     if(!m_cards.isEmpty())
     {
         for(auto it = m_cards.begin();it!=m_cards.end();++it)

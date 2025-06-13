@@ -39,8 +39,8 @@ public:
 
     void setPoint(CardSuit cardsuit);
     void setSuit(CardPoint cardpoint);
-    CardPoint point();
-    CardSuit suit();
+    CardPoint point() const;
+    CardSuit suit() const;
 
 private:
     CardSuit m_cardsuit;

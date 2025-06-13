@@ -16,8 +16,8 @@ public:
     };
 
     // 添加扑克牌
-    void add(Card& card);
-    void add(Cards& cards);
+    void add(const Card& card);
+    void add(const Cards& cards);
 
     // 一次性插入多个数据（操作符重载<<)
     Cards& operator <<(const Card& card);

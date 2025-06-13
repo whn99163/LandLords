@@ -15,12 +15,12 @@ void Card::setSuit(Card::CardPoint cardpoint)
     m_cardpoint=cardpoint;
 }
 
-Card::CardPoint Card::point()
+Card::CardPoint Card::point() const
 {
     return m_cardpoint;
 }
 
-Card::CardSuit Card::suit()
+Card::CardSuit Card::suit() const
 {
     return m_cardsuit;
 }

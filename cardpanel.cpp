@@ -11,7 +11,7 @@ void CardPanel::setImage(QPixmap &front, QPixmap &back)
     m_back = back;
 
     setFixedSize(m_front.size());//调整窗口大小
-    updata();//手动更新窗口 调用绘图事件
+    update();//手动更新窗口 调用绘图事件
 }
 
 QPixmap CardPanel::getImage(QPixmap &front, QPixmap &back)

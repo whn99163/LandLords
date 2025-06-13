@@ -33,19 +33,21 @@ public:
     void setOwner(Player* player);
     Player* getOwner();
 protected:
-    void paintEvent(QPaintEvent *event);
-    void mousePressEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event);//绘图事件
+    void mousePressEvent(QMouseEvent *event); 
+
 signals:
 
 public slots:
 
 private:
-    QPixmap m_front;
-    QPixmap m_back;
+    QPixmap m_front; // 显示正面
+    QPixmap m_back; // 显示反面
     bool m_isfront;
     bool m_isselected;
     Card m_card;
     Player* m_owner;
 };
 
+// QPixmap（	适用于GUI绘制）和 QImage（适用于图像处理）都是Qt中用于处理图像的类
 #endif // CARDPANEL_H

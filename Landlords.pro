@@ -27,7 +27,6 @@ SOURCES += \
         main.cpp \
     card.cpp \
     cardpanel.cpp \
-    player.cpp \
     cards.cpp \
     player.cpp
 
@@ -35,7 +34,6 @@ HEADERS += \
         gamepanel.h \
     card.h \
     cardpanel.h \
-    player.h \
     cards.h \
     player.h
 

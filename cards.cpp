@@ -23,7 +23,7 @@ Cards &Cards::operator <<(const Card &card)
 }
 
 Cards &Cards::operator <<(const Cards &cards)
-{
+{ 
     add(cards);
     return *this;
 }
@@ -92,7 +92,7 @@ int Cards::pointCount(Card::CardPoint point)
     {
         if(it->point() == point)
         {
-            count++
+            count++;
         }
     }
     return count;
@@ -116,7 +116,7 @@ Card Cards::takeRandCard()
     for(int i=0;i<num;++i,++it);
     Card card = *it;
     m_cards.erase(it);
-    return card;
+    return card;  
 }
 
 CardList Cards::toCardList(SortType type)
@@ -126,13 +126,13 @@ CardList Cards::toCardList(SortType type)
     {
         list<<*it;
     }
-    if(type == Asc)
+    if(type == Asc) 
     {
         std::sort(list.begin(),list.end(),lessSort);
     }
     else if(type==Desc)
     {
-        std::sort(list.begin(),list.end(),greaterSort)
+        std::sort(list.begin(),list.end(),greaterSort);
     }
 }
 

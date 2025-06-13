@@ -25,7 +25,7 @@ Card::CardSuit Card::suit()
     return m_cardsuit;
 }
 
-
+//从小排序
 bool lessSort(Card &card1, Card &card2)
 {
     if(card1.point()==card2.point())

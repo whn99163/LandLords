@@ -8,6 +8,5 @@ int main(int argc, char *argv[])
     GamePanel w;
     w.show();
 
-    std::cout<<sizeof(Card)<<std::endl;
     return a.exec();
 }

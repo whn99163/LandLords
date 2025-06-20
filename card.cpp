@@ -39,3 +39,13 @@ bool GreaterSort(Card &card1, Card &card2)
         return card1.suit()<card2.suit();
     return card1.point()>card2.point();
 }
+
+uint qHash(const Card &card)
+{
+    return card.point()*100+card.suit();
+}
+
+bool operator ==(const Card &left, const Card &right)
+{
+    return (left.point() == right.point() && left.suit() == right.suit());
+}

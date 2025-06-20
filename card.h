@@ -48,6 +48,13 @@ private:
 
 };
 
+//操作符重载（==）
+bool operator == (const Card& left,const Card& right);
+
+//重写全局函数 qHash
+uint qHash(const Card& card);
+
+//对象比较
 bool lessSort(Card& card1,Card& card2);
 bool GreaterSort(Card& card1,Card& card2);
 

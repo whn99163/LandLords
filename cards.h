@@ -48,7 +48,7 @@ public:
     // 随机取出一张扑克牌
     Card takeRandCard();
 
-    CardList toCardList(SortType type);
+    CardList toCardList(SortType type = Desc);
 private:
     QSet<Card> m_cards;
 };

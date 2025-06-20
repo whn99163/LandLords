@@ -105,7 +105,7 @@ bool Cards::contains(const Card &card)
 
 bool Cards::contains(const Cards &cards)
 {
-    return m_cards.contains(cards);
+    return m_cards.contains(cards.m_cards);
 }
 
 Card Cards::takeRandCard()
@@ -132,8 +132,9 @@ CardList Cards::toCardList(SortType type)
     }
     else if(type==Desc)
     {
-        std::sort(list.begin(),list.end(),greaterSort);
+        std::sort(list.begin(),list.end(),GreaterSort);
     }
+    return list;
 }
 
 

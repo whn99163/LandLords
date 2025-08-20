@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include <QObject>
-
+#include <cards.h>
 class Player : public QObject
 {
     Q_OBJECT
@@ -24,13 +24,45 @@ public:
     Sex getSex();
 
     void setDirection(Direction direction);
-    void getDirection();
+    Direction getDirection();
 
     void setType(Type type);
     Type getType();
 
+    //玩家的分数
     void setScore(int score);
     int getScore();
+
+    void setWin(bool flag);
+    bool isWin();
+
+    //提供玩家的上下家
+    void setPrevPlayer(Player* player);
+    void setNextPlayer(Player* Player);
+
+    Player* getPrePlayer();
+    Player* getNextPlayer();
+
+    //叫地主/抢地主
+    void grabLordBet(int point);
+
+    //存储扑克牌（发牌的时候得到的）
+    void storeDispatchCard(Card& card);
+    void storeDispatchCard(Cards& cards);
+    
+    //得到所有的牌
+    Cards getCards();
+    
+    //清空玩家手中所有的牌
+    void clearCards();
+    
+    //出牌
+    void playHand(Cards& cards);
+
+    //设置出牌的玩家以及待处理的扑克牌
+    void setPendingInfo(Player* player,Cards& cards);
+    Player* getPendPlayer();
+    Cards getPendCards();
 signals:
 
 public slots:
@@ -43,6 +75,11 @@ private:
     Direction m_direction;
     Type m_type;
     bool m_isWin;
+    Player* m_prev;
+    Player* m_next;
+    Cards m_cards; // 存储多张扑克牌（玩家手中的牌）
+    Cards m_pendCards;
+    Player* m_pendPlayer;
 };
 
 #endif // PLAYER_H

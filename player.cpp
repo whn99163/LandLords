@@ -40,7 +40,7 @@ void Player::setDirection(Player::Direction direction)
     m_direction = direction;
 }
 
-void Player::getDirection()
+Player::Direction Player::getDirection()
 {
     return m_direction;
 }
@@ -63,4 +63,79 @@ void Player::setScore(int score)
 int Player::getScore()
 {
     return m_score;
+}
+
+void Player::setWin(bool flag)
+{
+    m_isWin=flag;
+}
+
+bool Player::isWin()
+{
+    return m_isWin;
+}
+
+void Player::setPrevPlayer(Player *player)
+{
+    m_prev=player;
+}
+
+void Player::setNextPlayer(Player *player)
+{
+    m_next=player;
+}
+
+Player *Player::getPrePlayer()
+{
+    return m_prev;
+}
+
+Player *Player::getNextPlayer()
+{
+    return m_next;
+}
+
+void Player::grabLordBet(int point)
+{
+    m_
+}
+
+void Player::storeDispatchCard(Card &card)
+{
+    m_cards.add(card);
+}
+
+void Player::storeDispatchCard(Cards &cards)
+{
+    m_cards.add(cards);
+}
+
+Cards Player::getCards()
+{
+    return m_cards;
+}
+
+void Player::clearCards()
+{
+    m_cards.clear();
+}
+
+void Player::playHand(Cards &cards)
+{
+    m_cards.remove(cards);
+}
+
+void Player::setPendingInfo(Player *player, Cards &cards)
+{
+
+}
+
+Player *Player::getPendPlayer()
+{
+
+}
+
+Cards Player::getPendCards()
+{
+
 }

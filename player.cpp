@@ -127,15 +127,16 @@ void Player::playHand(Cards &cards)
 
 void Player::setPendingInfo(Player *player, Cards &cards)
 {
-
+    m_pendPlayer=player;
+    m_pendCards=cards;
 }
 
 Player *Player::getPendPlayer()
 {
-
+    return m_pendPlayer;
 }
 
 Cards Player::getPendCards()
 {
-
+    return m_pendCards;
 }

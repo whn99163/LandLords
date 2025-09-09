@@ -61,13 +61,19 @@ public:
 
     //设置出牌的玩家以及待处理的扑克牌
     void setPendingInfo(Player* player,Cards& cards);
+    //获取出牌玩家以及待处理的扑克牌
     Player* getPendPlayer();
     Cards getPendCards();
+
+    //虚函数 叫地主/出牌
+    virtual void prepareCallLord();
+    virtual void preparePlayHand();
+
 signals:
 
 public slots:
 
-private:
+protected:
     int m_score;
     QString m_name;
     Role m_role;
@@ -75,11 +81,11 @@ private:
     Direction m_direction;
     Type m_type;
     bool m_isWin;
-    Player* m_prev;
-    Player* m_next;
+    Player* m_prev; //当前玩家的上家
+    Player* m_next; //当前玩家的下家
     Cards m_cards; // 存储多张扑克牌（玩家手中的牌）
-    Cards m_pendCards;
-    Player* m_pendPlayer;
+    Cards m_pendCards; //打出的扑克牌
+    Player* m_pendPlayer; //打出的扑克牌的所有者
 };
 
 #endif // PLAYER_H

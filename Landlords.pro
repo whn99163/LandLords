@@ -21,7 +21,10 @@ SOURCES += \
     player.cpp \
     gamepanel.cpp \
     singleton.cpp \
-    logger.cpp
+    logger.cpp \
+    userplayer.cpp \
+    robot.cpp \
+    gamecontrol.cpp
 
 HEADERS += \
         gamepanel.h \
@@ -47,7 +50,10 @@ HEADERS += \
     spdlog/stopwatch.h \
     spdlog/tweakme.h \
     spdlog/version.h \
-    logger.h
+    logger.h \
+    userplayer.h \
+    robot.h \
+    gamecontrol.h
 
 FORMS += \
         gamepanel.ui

@@ -20,7 +20,11 @@ SOURCES += \
     cards.cpp \
     player.cpp \
     gamepanel.cpp \
-    singleton.cpp
+    singleton.cpp \
+    logger.cpp \
+    userplayer.cpp \
+    robot.cpp \
+    gamecontrol.cpp
 
 HEADERS += \
         gamepanel.h \
@@ -28,7 +32,28 @@ HEADERS += \
     cardpanel.h \
     cards.h \
     player.h \
-    singleton.h
+    singleton.h \
+    spdlog/async.h \
+    spdlog/async_logger.h \
+    spdlog/async_logger-inl.h \
+    spdlog/common.h \
+    spdlog/common-inl.h \
+    spdlog/formatter.h \
+    spdlog/fwd.h \
+    spdlog/logger.h \
+    spdlog/logger-inl.h \
+    spdlog/mdc.h \
+    spdlog/pattern_formatter.h \
+    spdlog/pattern_formatter-inl.h \
+    spdlog/spdlog.h \
+    spdlog/spdlog-inl.h \
+    spdlog/stopwatch.h \
+    spdlog/tweakme.h \
+    spdlog/version.h \
+    logger.h \
+    userplayer.h \
+    robot.h \
+    gamecontrol.h
 
 FORMS += \
         gamepanel.ui

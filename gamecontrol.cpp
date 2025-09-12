@@ -72,6 +72,45 @@ void GameControl::playerInit()
     m_currPlayer = m_user;
 }
 
+void GameControl::initAllCards()
+{
+    m_allCards.clear();
+    for(Card::CardPoint p=Card::CardPoint_begin+1;p<Card::Card_SJ;++p)
+    {
+        for(Card::CardSuit s=Card::CardSuit_begin+1;s<Card::CardSuit_end;++s)
+        {
+            Card c(p,s);
+            m_allCards.add(c);
+        }
+    }
+    m_allCards.add(Card(Card::Card_sj,Card::CardSuit_begin));
+    m_allCards.add(Card(Card::Card_bj,Card::CardSuit_begin));
+}
+
+Card GameControl::takeOneCard()
+{
+    return m_allCards.takeRandCard();
+}
+
+Cards GameControl::getSurplusCards()
+{
+    return m_allCards;
+}
+
+void GameControl::resetCarData()
+{
+    //洗牌
+    initAllCards();
+    //清空所有玩家的牌
+    m_robotLeft->clearCards();
+    m_robotRight->clearCards();
+    m_user->clearCards();
+
+    //初始化出牌玩家和牌
+    m_pendPlayer=nullptr;
+    m_pendCards.clear();
+}
+
 GameControl::GameControl(QObject *parent) : QObject(parent)
 {
 

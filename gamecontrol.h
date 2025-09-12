@@ -12,9 +12,9 @@ public:
     //游戏状态
     enum GameStatus
     {
-        DispatchCard,
-        CallingLord,
-        PlayingHand
+        DispatchCard, //发牌
+        CallingLord, //叫地主
+        PlayingHand //出牌
     };
     //玩家状态
     enum PlayerStatus
@@ -36,9 +36,19 @@ public:
     //出牌玩家及打出的牌获取
     Player* getPendPlayer();
     Cards getPendCards();
+
     //初始化玩家
     void playerInit();
+
     //初始化扑克牌
+    void initAllCards();
+
+    //每次发一张牌
+    Card takeOneCard();
+    //得到最后的三张底牌
+    Cards getSurplusCards();
+    //充值卡牌数据
+    void resetCarData();
 
     explicit GameControl(QObject *parent = nullptr);
 
@@ -53,6 +63,7 @@ private:
     Player* m_currPlayer;
     Player* m_pendPlayer;
     Cards m_pendCards;
+    Cards m_allCards;
 };
 
 #endif // GAMECONTROL_H

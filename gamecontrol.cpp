@@ -111,7 +111,32 @@ void GameControl::resetCarData()
     m_pendCards.clear();
 }
 
+void GameControl::startLordCard()
+{
+    m_currPlayer->prepareCallLord();
+}
+
+void GameControl::becomeLord(Player *player)
+{
+    player->setRole(Player::Lord);
+    player->getPrePlayer()->setRole(Player::Farmer);
+    player->getNextPlayer()->setRole(Player::Farmer);
+
+    m_currPlayer=player;
+    player->storeDispatchCard(m_allCards);
+
+    m_currPlayer->preparePlayHand();
+}
+
+
 GameControl::GameControl(QObject *parent) : QObject(parent)
 {
 
+}
+
+void GameControl::clearPlayerScore()
+{
+    m_robotLeft->setScore(0);
+    m_robotRight->setScore(0);
+    m_user->setScore(0);
 }

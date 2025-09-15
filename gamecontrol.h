@@ -50,7 +50,14 @@ public:
     //充值卡牌数据
     void resetCarData();
 
+    //准备叫地主
+    void startLordCard();
+    //成为地主
+    void becomeLord(Player* player);
     explicit GameControl(QObject *parent = nullptr);
+
+    //清空所有玩家的得分
+    void clearPlayerScore();
 
 signals:
 

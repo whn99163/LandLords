@@ -140,3 +140,13 @@ Cards Player::getPendCards()
 {
     return m_pendCards;
 }
+
+void Player::prepareCallLord()
+{
+    
+}
+
+void Player::preparePlayHand()
+{
+    
+}

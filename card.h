@@ -7,6 +7,7 @@ class Card
 {
 public:
     Card();
+    Card(CardPoint point,CardSuit suit);
 
     enum CardSuit{
         CardSuit_begin,
